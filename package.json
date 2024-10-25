@@ -1,10 +1,10 @@
 {
   "name": "facebooklogin",
   "version": "1.0.0",
-  "main": "src\\index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect src\\index.js",
-    "watch": "node-sass --watch src\\resources\\scss --output src\\public\\css",
+    "start": "nodemon --inspect src/index.js",
+    "watch": "node-sass --watch src/resources/scss --output src/public/css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
