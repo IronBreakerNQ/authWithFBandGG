@@ -14,7 +14,7 @@ class AuthController {
                     return res.redirect('/');
                 }
                 console.log(user);
-                return res.render('thanksForm');
+                return res.json(user);
             });
         })(req,res);
     } 
@@ -33,7 +33,7 @@ class AuthController {
                     return res.redirect('/');
                 }
                 console.log(user);
-                return res.render('thanksForm');
+                return res.json(user);
             });
         })(req,res);
     } 

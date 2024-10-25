@@ -5,13 +5,20 @@ const passport = require('./config/passport');
 const { engine } = require('express-handlebars');
 
 require('dotenv').config();
-console.log(process.env.FACEBOOK_APP_ID, process.env.FACEBOOK_APP_SECRET);
-
 
 const app = express();
 
+//cors
+const cors = require('cors');
+app.use(cors());
+//skip ngork
+const skipgrok = require('./config/skipgrok');
+// skipgrok.sendNgrokRequest();
+
 //static file
 app.use(express.static(path.join(__dirname, 'public')));
+console.log(process.env.PORT);
+
 
 // Template engine
 app.engine('hbs', engine({
@@ -35,7 +42,7 @@ app.use(passport.session());
 const routers = require('./routes/index');
 routers(app);
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
